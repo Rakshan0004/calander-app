@@ -1,6 +1,4 @@
-// src/events/event.entity.ts
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-
 @Entity()
 export class Event {
   @PrimaryGeneratedColumn()
@@ -16,5 +14,5 @@ export class Event {
   description: string;
 
   @Column({ nullable: true })
-  imageUrl: string; // If you want to add an image URL field
+  imageUrl: string;
 }

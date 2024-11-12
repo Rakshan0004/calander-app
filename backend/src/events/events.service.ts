@@ -1,8 +1,10 @@
+// src/events/events.service.ts
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Event } from './event.entity'; // Import the Event entity
 import { CreateEventDto } from './dto/create-event.dto';
+
 
 @Injectable()
 export class EventsService {
@@ -19,5 +21,8 @@ export class EventsService {
     return this.eventsRepository.find(); // Get all events
   }
 
-  // Add other CRUD methods (update, delete) as necessary
+  // Example of an additional CRUD method
+  async deleteEvent(id: number): Promise<void> {
+    await this.eventsRepository.delete(id); // Deletes an event by ID
+  }
 }
